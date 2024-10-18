@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auctions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="bg-gray-800 p-4 flex justify-between items-center">
+
+    <div class="flex items-center space-x-6">
+      <a href="{% url 'home' %}" class="text-2xl font-bold text-white">Auctions</a>
+      <a href="#features" class="text-gray-300 hover:text-white">Features</a>
+    </div>
+
+    {% if auth == False %}
+    <div class="space-x-4">
+      <a href="{% url 'register' %}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Register</a>
+      <a href="{% url 'login' %}" class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600">Log In</a>
+    </div>
+    {% endif %}
+  </nav>
+  <div class="flex items-center justify-center h-screen">
+    {% block content %}
+    {% endblock %}
+  </div>  
+  <footer class="bg-gray-800 p-4">
+    <div class="flex justify-center space-x-6">
+      <a href="https://www.instagram.com" class="text-gray-300 hover:text-white" target="_blank" rel="noopener noreferrer">
+        Instagram
+      </a>
+      <a href="https://www.linkedin.com" class="text-gray-300 hover:text-white" target="_blank" rel="noopener noreferrer">
+        LinkedIn
+      </a>
+      <a href="https://github.com" class="text-gray-300 hover:text-white" target="_blank" rel="noopener noreferrer">
+        GitHub
+      </a>
+      <a href="https://www.facebook.com" class="text-gray-300 hover:text-white" target="_blank" rel="noopener noreferrer">
+        Facebook
+      </a>
+    </div>
+  </footer>
+</body>
+</html>
