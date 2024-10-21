@@ -1,1 +1,23 @@
-db.sqlite3
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Django migrations
+*/migrations/*.pyc
+
+# Sensitive Django files
+*.env
+settings.py
+secrets.py
+
+# Databases
+*.sqlite3
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
